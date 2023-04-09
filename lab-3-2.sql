@@ -1,7 +1,5 @@
 -- For each team, what is the average number of wins per season, in the 21st century?
-
 -- Expected result:
---
 -- +-------------------------------+------------------+
 -- | Anaheim Angels                | 85.75            |
 -- | Arizona Diamondbacks          | 76.9             |
@@ -38,5 +36,9 @@
 -- | Toronto Blue Jays             | 77.4             |
 -- | Washington Nationals          | 78.0             |
 -- +-------------------------------+------------------+
-
+SELECT name, AVG(wins)
+FROM teams
+WHERE year > 2000
+GROUP BY name
+;
 

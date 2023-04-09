@@ -1,6 +1,5 @@
 -- What were the winningest teams in each season of the 
 -- modern era (from 1960-present), listed by winningest teams first?
-
 -- Expected result: 61 rows, starting with
 --
 -- +------+-------------------------------+-----------+
@@ -15,4 +14,8 @@
 -- | 2019 | Houston Astros                | 107       |
 -- | 2004 | St. Louis Cardinals           | 105       |
 
-
+SELECT year, name, count(wins)
+FROM teams
+where year > 1959
+group by name
+ORDER by count(wins) DESC;
